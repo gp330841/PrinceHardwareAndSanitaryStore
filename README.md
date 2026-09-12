@@ -1,36 +1,104 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Prince Hardware & Sanitary Store — Website
 
-## Getting Started
+A modern, responsive website for **Prince Hardware & Sanitary Store** built with Next.js, TypeScript, and Tailwind CSS.
 
-First, run the development server:
+## 🛠️ Tech Stack
+
+- **Next.js 14** (App Router) — React framework
+- **TypeScript** — Type-safe development
+- **Tailwind CSS** — Utility-first styling
+- **Lucide React** — Beautiful icons
+- **Static Export** — Pre-rendered HTML for fast, serverless hosting
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js 18+ installed
+- npm or yarn
+
+### Development
 
 ```bash
+# Install dependencies
+npm install
+
+# Start development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Build for Production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+```
 
-## Learn More
+This generates a static site in the `out/` directory.
 
-To learn more about Next.js, take a look at the following resources:
+## ☁️ Deploy to Cloudflare Pages
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Option 1: Git Integration (Recommended)
+1. Push this repo to **GitHub** or **GitLab**
+2. Go to [Cloudflare Pages](https://pages.cloudflare.com/)
+3. Click **"Create a project"** → **"Connect to Git"**
+4. Select your repository
+5. Set build settings:
+   - **Build command**: `npm run build`
+   - **Build output directory**: `out`
+6. Click **"Save and Deploy"**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Every push to `main` will auto-deploy! 🎉
 
-## Deploy on Vercel
+### Option 2: Direct Upload
+1. Run `npm run build`
+2. Go to [Cloudflare Pages](https://pages.cloudflare.com/)
+3. Click **"Create a project"** → **"Direct Upload"**
+4. Drag and drop the `out/` folder
+5. Done!
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## ✏️ Customizing Shop Details
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+All shop information is in **one file**: `src/lib/constants.ts`
+
+Edit this file to update:
+- Shop name, tagline, description
+- Phone number(s), email, WhatsApp
+- Address
+- Google Maps embed URL
+- Business hours
+- Social media links
+- Product categories
+- Brands
+- Testimonials
+
+After editing, rebuild and redeploy.
+
+## 📁 Project Structure
+
+```
+src/
+├── app/
+│   ├── layout.tsx          # Root layout (fonts, SEO metadata)
+│   ├── page.tsx            # Home page (assembles all sections)
+│   └── globals.css         # Global styles
+├── components/
+│   ├── layout/
+│   │   ├── Navbar.tsx      # Navigation bar
+│   │   └── Footer.tsx      # Footer
+│   ├── sections/
+│   │   ├── Hero.tsx        # Hero banner
+│   │   ├── Categories.tsx  # Product categories
+│   │   ├── WhyChooseUs.tsx # USP features
+│   │   ├── Brands.tsx      # Brand showcase
+│   │   ├── Testimonials.tsx# Customer reviews
+│   │   └── Contact.tsx     # Contact & map
+│   └── ui/
+│       └── WhatsAppButton.tsx # Floating WhatsApp CTA
+└── lib/
+    └── constants.ts        # ⭐ All shop details (edit this!)
+```
+
+## 📄 License
+
+Private — built for Prince Hardware & Sanitary Store.
