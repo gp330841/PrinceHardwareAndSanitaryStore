@@ -5,9 +5,6 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true, // Required for static export
   },
-  turbopack: {
-    root: "/Users/yogeshwarpatel/Workspace/PrinceHardwareAndSanitaryStore",
-  },
 };
 
 export default nextConfig;
